@@ -20,7 +20,7 @@ function Footer() {
             <button 
               id="btn-footer-cta" 
               className="btn-primary"
-              onClick={() => window.open('https://wa.me/seunumerodeexemplo?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20diagnóstico%20de%20liderança%20para%20empresas.', '_blank')}
+              onClick={() => window.open('http://wa.me/5549991094075?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20diagnóstico%20de%20liderança%20para%20empresas.', '_blank')}
             >
               FALAR COM NOSSA EQUIPE
             </button>

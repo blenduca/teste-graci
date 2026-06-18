@@ -73,6 +73,7 @@ function Result({ profileCode }) {
           <button
             id="btn-comunidade-lider"
             className="btn-primary"
+            onClick={() => window.open('https://chat.whatsapp.com/Lki37j3x1B166UjvhxHrlV', '_blank')}
           >
             ENTRAR NA COMUNIDADE LÍDER NA PRÁTICA
           </button>
@@ -97,7 +98,7 @@ function Result({ profileCode }) {
             <button
               id="btn-contato-gracielli"
               className="btn-secondary"
-              onClick={() => window.open('https://wa.me/seunumerodeexemplo', '_blank')}
+              onClick={() => window.open('http://wa.me/5549991094075', '_blank')}
             >
               ENTRAR EM CONTATO COM A GRACIÉLLI
             </button>
