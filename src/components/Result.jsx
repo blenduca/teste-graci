@@ -44,7 +44,7 @@ function Result({ profileCode }) {
           <div className="result-label">FORÇA</div>
           <div className="result-value">{data.forca}</div>
         </div>
-        
+
         <div className="result-item glass-panel">
           <div className="result-label">RISCO</div>
           <div className="result-value">{data.risco}</div>
@@ -91,7 +91,7 @@ function Result({ profileCode }) {
             <button
               id="btn-saber-mais"
               className="btn-primary"
-              onClick={() => window.open('https://designblenduca.github.io/gracielli-mentoria/', '_blank')}
+              onClick={() => window.open('https://mentoriaemgrupo.aguide.com.br/', '_blank')}
             >
               SABER MAIS
             </button>
