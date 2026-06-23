@@ -565,6 +565,25 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-dark);
 }
 
+.quiz-option:focus {
+  outline: none;
+}
+
+.quiz-option.selected {
+  background: var(--color-white);
+  border-color: var(--color-verde);
+  box-shadow: 0 4px 16px rgba(45, 42, 41, 0.08);
+}
+
+.quiz-option.selected .option-letter {
+  background: var(--color-verde);
+  color: var(--color-dark);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
 /* ---------------------------------
    FORMULÁRIO DE CAPTURA
    --------------------------------- */

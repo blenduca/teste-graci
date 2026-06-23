@@ -79,10 +79,14 @@ function Quiz({ onComplete, onExit }) {
   const [scores, setScores] = useState({ A: 0, B: 0, C: 0, D: 0 });
   const [answers, setAnswers] = useState([]);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleOptionSelect = (value) => {
+  const handleOptionSelect = (value, e) => {
     if (isTransitioning) return;
+    // Remove o foco do botão clicado para evitar que o estilo :focus/:hover persista
+    if (e && e.currentTarget) e.currentTarget.blur();
     setIsTransitioning(true);
+    setSelectedOption(value);
     const newScores = { ...scores, [value]: scores[value] + 1 };
     const newAnswers = [...answers, value];
     setScores(newScores);
@@ -90,6 +94,7 @@ function Quiz({ onComplete, onExit }) {
     setTimeout(() => {
       if (currentQuestionIdx < quizData.length - 1) {
         setCurrentQuestionIdx(currentQuestionIdx + 1);
+        setSelectedOption(null);
         setIsTransitioning(false);
       } else {
         onComplete({ scores: newScores, answers: newAnswers });
@@ -102,6 +107,7 @@ function Quiz({ onComplete, onExit }) {
     const prevAnswer = answers[answers.length - 1];
     setScores({ ...scores, [prevAnswer]: scores[prevAnswer] - 1 });
     setAnswers(answers.slice(0, -1));
+    setSelectedOption(null);
     setCurrentQuestionIdx(currentQuestionIdx - 1);
   };
 
@@ -143,8 +149,9 @@ function Quiz({ onComplete, onExit }) {
               <button
                 key={idx}
                 id={`quiz-option-${currentQuestionIdx}-${idx}`}
-                className="quiz-option"
-                onClick={() => handleOptionSelect(opt.value)}
+                className={`quiz-option${selectedOption === opt.value ? ' selected' : ''}`}
+                onClick={(e) => handleOptionSelect(opt.value, e)}
+                disabled={isTransitioning}
               >
                 <div className="option-letter">
                   {['A', 'B', 'C', 'D'][idx]}
