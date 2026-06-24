@@ -538,10 +538,12 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-.quiz-option:hover {
-  background: var(--color-white);
-  border-color: var(--color-verde);
-  box-shadow: 0 4px 16px rgba(45, 42, 41, 0.08);
+@media (hover: hover) {
+  .quiz-option:hover {
+    background: var(--color-white);
+    border-color: var(--color-verde);
+    box-shadow: 0 4px 16px rgba(45, 42, 41, 0.08);
+  }
 }
 
 .option-letter {
@@ -560,9 +562,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition-smooth);
 }
 
-.quiz-option:hover .option-letter {
-  background: var(--color-verde);
-  color: var(--color-dark);
+@media (hover: hover) {
+  .quiz-option:hover .option-letter {
+    background: var(--color-verde);
+    color: var(--color-dark);
+  }
 }
 
 .quiz-option:focus {
